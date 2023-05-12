@@ -13,6 +13,18 @@ app.post("/add_user", async (request, response) => {
     }
 });
 
+// app.get("/find_user", async (request, response) => {
+//     const name = request.body;
+//     console.log(name);
+//     const user = await userModel.find({name: name});
+  
+//     try {
+//         response.send(user);
+//       } catch (error) {
+//         response.status(500).send(error);
+//       }
+// });
+
 app.get("/users", async (request, response) => {
     const users = await userModel.find({});
   
