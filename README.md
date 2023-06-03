@@ -1,5 +1,5 @@
 # Childcare-Helper
-Childcare Helper is my BYU-Idaho Senior Project.
+Childcare Helper is my BYU-Idaho Senior Project. To start the app, run `npm start` in a new terminal.
 
 This is the back-end portion of my project. Click [here](https://github.com/Kim-Quirk/Childcare-Helper) to checkout the front-end portion.
 
