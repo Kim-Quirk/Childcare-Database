@@ -1,5 +1,5 @@
 const express = require("express");
-const userModel = require("./models");
+const userModel = require("./models/childSchema");
 const app = express();
 
 app.post("/add_user", async (request, response) => {
