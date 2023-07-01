@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const ChildSchema = new mongoose.Schema({
+const ReportSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -27,6 +27,6 @@ const ChildSchema = new mongoose.Schema({
   }
 });
 
-const Child = mongoose.model("Child", ChildSchema);
+const User = mongoose.model("User", UserSchema);
 
-module.exports = Child;
+module.exports = User;

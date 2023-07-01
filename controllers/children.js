@@ -1,11 +1,11 @@
-const userModel = require("../models/childSchema");
+const childModel = require("../models/childSchema");
 const mongoose = require('mongoose');
 
 exports.postSave = async (req, res, next) => {
-    const user = new userModel(req.body);
+    const child = new childModel(req.body);
     try {
-        await user.save();
-        res.send(user);
+        await child.save();
+        res.send(child);
     } catch (error) {
         res.status(500).send(error);
     }
@@ -19,9 +19,9 @@ exports.getChild = async (req, res, next) => {
         _id: id
     };
     console.log(id);
-    const user = await userModel.findById(id);
+    const child = await childModel.findById(id);
     try {
-        res.send(user);
+        res.send(child);
     } catch (error) {
         res.status(500).send(error);
     }
@@ -29,10 +29,10 @@ exports.getChild = async (req, res, next) => {
 
 // Return all children in database
 exports.getChildren = async (req, res, next) => {
-    const users = await userModel.find({});
+    const children = await childModel.find({});
   
     try {
-        res.send(users);
+        res.send(children);
     } catch (error) {
         res.status(500).send(error);
     }
