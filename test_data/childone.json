@@ -1,0 +1,19 @@
+{
+    "name": "Johnny Doe",
+    "allergies": ["N/A"],
+    "rx": ["N/A"],
+    "bathroom": "diapers",
+    "birthday": "12/08/2021",
+    "guardians": [
+        {
+            "name": "Jane Doe",
+            "phone": "888-8888-8888",
+            "email": "janedoe@email.com"
+        },
+        {
+            "name": "John Doe",
+            "phone": "888-8888-8888",
+            "email": "johndoe@email.com"
+        }
+    ]
+}
