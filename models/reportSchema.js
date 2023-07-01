@@ -1,32 +1,16 @@
 const mongoose = require("mongoose");
 
 const ReportSchema = new mongoose.Schema({
-  name: {
+  child_id: {
     type: String,
     required: true,
   },
-  allergies: {
-    type: Array,
-    default: ["N/A"],
+  report: {
+    type: Object,
+    default: "N/A",
   },
-  rx: {
-    type: Array,
-    default: ["N/A"],
-  },
-  bathroom: {
-    type: String,
-    default: "Unknown",
-  },
-  birthday: {
-    type: Date,
-    required: true,
-  },
-  guardians: {
-    type: Array,
-    default: ["N/A"],
-  }
 });
 
-const User = mongoose.model("User", UserSchema);
+const Report = mongoose.model("Report", ReportSchema);
 
-module.exports = User;
+module.exports = Report;

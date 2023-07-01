@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 const childrenRoutes = require('./routes/children.js');
-// const resultRoutes = require('./routes/result');
+const reportRoutes = require('./routes/report.js');
 // const sessionRoutes = require('./routes/session');
 
 app.use(cors({
@@ -31,6 +31,7 @@ db.once("open", function () {
 });
 
 app.use(childrenRoutes);
+app.use(reportRoutes);
 
 app.listen(PORT, () => {
   console.log("Server is running at port 3000");
