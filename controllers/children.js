@@ -15,9 +15,9 @@ exports.postSave = async (req, res, next) => {
 exports.getChild = async (req, res, next) => {
     const { headers } = req;
     const id = headers['id'];
-    options = {
-        _id: id
-    };
+    // options = {
+    //     _id: id
+    // };
     console.log(id);
     const child = await childModel.findById(id);
     try {

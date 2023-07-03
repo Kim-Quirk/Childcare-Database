@@ -14,18 +14,37 @@ exports.postSave = async (req, res, next) => {
 // Find one report via a child's ID
 exports.getReport = async (req, res, next) => {
     const { headers } = req;
-    const id = headers['child_id'];
+    const string = headers['child_id'];
     // options = {
     //     _id: id
     // };
-    console.log(id);
-    const report = await reportModel.find({child_id: id});
+    console.log(string);
+    const report = await reportModel.find({child_id: string}).exec();
+    console.log(report);
     try {
         res.send(report);
     } catch (error) {
         res.status(500).send(error);
     }
 };
+
+// exports.getReport = async (req, res, next) => {
+//     const { headers } = req;
+//     const string = headers['child_id'];
+//     // options = {
+//     //     _id: id
+//     // };
+//     console.log(string);
+//     const reports = await reportModel.find({});
+//     const report = reports.filter(report => report.child_id === string);
+//     console.log(report);
+//     try {
+//         res.send(report);
+//     } catch (error) {
+//         res.status(500).send(error);
+//     }
+// };
+
 
 // Return all reports in database
 exports.getReports = async (req, res, next) => {
