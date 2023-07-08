@@ -1,6 +1,12 @@
-const reportModel = require("../models/reportSchema");
-const mongoose = require('mongoose');
+/*
+    This is the controller file for our reports.
+    It directs traffic based on the request (add a report, get all reports, find a specific report).
+*/
 
+// Initlize our variables 
+const reportModel = require("../models/reportSchema");
+
+// Save a new report to our database
 exports.postSave = async (req, res, next) => {
     const report = new reportModel(req.body);
     try {
@@ -14,12 +20,10 @@ exports.postSave = async (req, res, next) => {
 // Find one report via a child's ID
 exports.getReport = async (req, res, next) => {
     const { headers } = req;
-    const id = headers['child_id'];
-    // options = {
-    //     _id: id
-    // };
-    console.log(id);
-    const report = await reportModel.find({child_id: id});
+    const string = headers['child_id'];
+    console.log(string);
+    const report = await reportModel.find({child_id: string}).exec();
+    console.log(report);
     try {
         res.send(report);
     } catch (error) {

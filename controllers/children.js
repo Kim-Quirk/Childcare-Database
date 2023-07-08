@@ -1,6 +1,12 @@
-const childModel = require("../models/childSchema");
-const mongoose = require('mongoose');
+/*
+    This is the controller file for our children.
+    It directs traffic based on the request (add a child, get all children, find a specific child).
+*/
 
+// Initlize our variables 
+const childModel = require("../models/childSchema");
+
+// Save a new child to our database
 exports.postSave = async (req, res, next) => {
     const child = new childModel(req.body);
     try {
@@ -15,9 +21,6 @@ exports.postSave = async (req, res, next) => {
 exports.getChild = async (req, res, next) => {
     const { headers } = req;
     const id = headers['id'];
-    options = {
-        _id: id
-    };
     console.log(id);
     const child = await childModel.findById(id);
     try {
